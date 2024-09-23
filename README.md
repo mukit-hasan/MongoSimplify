@@ -1,0 +1,1 @@
+A Python library for MongoDB integration with Django-like models
