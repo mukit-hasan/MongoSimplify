@@ -16,6 +16,7 @@ setup(
     install_requires=[
         "pymongo",
     ],
+    keywords=['python', 'pymongo', 'pymongomodel'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
