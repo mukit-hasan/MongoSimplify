@@ -16,13 +16,13 @@ class Model(models):
     The Model class is inherited from the imported Model class, and it is used to establish a connection to the MongoDB database.
 
     Attributes:
-        host (str): The hostname or IP address of the MongoDB server (default is 'localhost').
+        host (str): The hostname or IP address of the MongoDB server.
         port (int): The port number on which the MongoDB server is listening (default is 27017).
-        database (str): The name of the MongoDB database to connect to (default is 'test').
+        database (str): The name of the MongoDB database to connect to (default is 'PymongoModel').
     """
     host = 'localhost'
     port = 27017
-    database = 'test'
+    database = 'PymongoModel'
 
 
 class Product(Model):

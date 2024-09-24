@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from pymongo.mongo_client import MongoClient
 from pymongo.database import Database
 from pymongo.collection import Collection
 from typing import Any, Dict, List, Optional
@@ -21,14 +21,18 @@ class Model:
     def __init_subclass__(cls, **kwargs) -> None:
         super().__init_subclass__(**kwargs)
         # Default to 'localhost' if not set
-        host: str = getattr(cls, 'host', 'localhost')
+        host: str = getattr(cls, 'host')
         # Default to 27017 if not set
         port: int = getattr(cls, 'port', 27017)
-        # Default to 'pymongomodel_db'
-        database: str = getattr(cls, 'database', 'pymongomodel_db')
+        # Default to 'PymongoModel'
+        database: str = getattr(cls, 'database', 'PymongoModel')
 
         if Model.client is None:
-            Model._connect(host, port, database)
+            try:
+                Model._connect(host, port, database)
+            except Exception as e:
+                print(f'fail to connect to MongoDB server error: {e}')
+                return
         cls.collection: Collection = Model.db[cls.__name__.lower()]
 
     @staticmethod

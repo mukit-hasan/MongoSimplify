@@ -29,7 +29,7 @@ To use the library, define a subclass of Model to specify your database connecti
 from PyMongoModel.models import models
 
 # setting up host port and database
-class Mydb(Model):
+class Model(Model):
     host = 'localhost'  # or your MongoDB server IP
     port = 27017
     database = 'my_database'
@@ -44,13 +44,13 @@ class Product(Mydb): # collection name
 ```py
 # Create a new document
 my_doc = {'name': 'Alice', 'age': 30}
-new_id = MyDatabase.create(my_doc)
+new_id = Product.create(my_doc)
 print(f"Document created with ID: {new_id}")
 ```
 ## Retrieve a Document
 ```python
 # Get a single document
-doc = MyDatabase.get({'name': 'Alice'})
+doc = Product.get({'name': 'Alice'})
 print(doc)
 ```
 
@@ -58,26 +58,26 @@ print(doc)
 
 ```python
 # Update the document
-updated_doc = MyDatabase.update({'name': 'Alice'}, {'age': 31})
+updated_doc = Product.update({'name': 'Alice'}, {'age': 31})
 print(f"Updated documents: {updated_doc.modified_count}")
 ```
 ## Delete a Document
 ```python
 # Delete a document
-deleted_doc = MyDatabase.delete({'name': 'Alice'})
+deleted_doc = Prsoduct.delete({'name': 'Alice'})
 print(f"Deleted documents: {deleted_doc.deleted_count}")
 Additional Operations
 ```
 ## Count Documents
 ```python
 # Count documents
-count = MyDatabase.count()
+count = Product.count()
 print(f"Total documents: {count}")
 ```
 ## Find Multiple Documents
 ```python
 # Find documents with a limit
-docs = MyDatabase.find(limit=5)
+docs = Product.find(limit=5)
 for doc in docs:
     print(doc)
 ```
@@ -91,14 +91,14 @@ operations = [
     UpdateOne({'name': 'Alice'}, {'$set': {'age': 32}}),
     DeleteOne({'name': 'Charlie'})
 ]
-result = MyDatabase.bulk_write(operations)
+result = Product.bulk_write(operations)
 print(f"Bulk operation result: {result.bulk_api_result}")
 ```
 
 ## Create Indexes
 ```python
 # Create an index on a field
-index_name = MyDatabase.create_index([('name', 1)])  # 1 for ascending
+index_name = Product.create_index([('name', 1)])  # 1 for ascending
 print(f"Index created: {index_name}")
 ```
 
