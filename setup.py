@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name="PyMongoModel",
-    version="0.1.0",
+    version="0.5.0",
     author="Mukit Hasan",
-    author_email="mukithasan58@gmail.com.com",
+    author_email="mukithasan58@gmail.com",
     description="A Python library for MongoDB integration with Django-like models",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
