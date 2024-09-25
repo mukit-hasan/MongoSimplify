@@ -55,6 +55,7 @@ docs/_build/
 venv/
 ENV/
 .pypirc
+.github/
 # Spyder project settings
 .spyderproject
 .spyproject
