@@ -1,22 +1,22 @@
 from setuptools import setup, find_packages
 
 
-DESCRIPTION = 'PymongoModel is a versatile Python library for easy and efficient MongoDB interaction.'
+DESCRIPTION = 'MongoSimplify is a versatile Python library for easy and efficient MongoDB interaction.'
 
 setup(
-    name="PyMongoModel",
+    name="MongoSimplify",
     version="0.5.0",
     author="Mukit Hasan",
     author_email="mukithasan58@gmail.com",
     description=DESCRIPTION,
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/mukit-hasan/PymongoModel",
+    url="https://github.com/mukit-hasan/MongoSimplify",
     packages=find_packages(),
     install_requires=[
         "pymongo",
     ],
-    keywords=['python', 'pymongo', 'pymongomodel'],
+    keywords=['python', 'pymongo', 'MongoSimplify', 'mongodb', 'nosql'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
